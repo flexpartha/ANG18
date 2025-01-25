@@ -13,7 +13,20 @@ export class UserAddressService {
   private _httClient = inject(HttpClient);
   //constructor(private _httClient: HttpClient) {}
 
-  getAllUserAddress(): Observable<Address[]> {
+  // getAllUserAddress(): Observable<Address[]> {
+  //   return this._httClient.get<UserAddress[]>(apiUrl).pipe(
+  //     map((response) => {
+  //       return response.map((userAddress) => userAddress.address);
+  //     }),
+  //     filter((address) => address.length > 0),
+  //     catchError((error: any) => {
+  //       console.log(error);
+  //       return throwError(() => new Error(error));
+  //     })
+  //   );
+  // }
+
+  getAllUserType(): Observable<Address[]> {
     return this._httClient.get<UserAddress[]>(apiUrl).pipe(
       map((response) => {
         return response.map((userAddress) => userAddress.address);

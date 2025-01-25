@@ -18,7 +18,7 @@ export class UserAddressComponent implements OnInit {
   userservice = inject(UserAddressService);
 
   ngOnInit(): void {
-    this.userAddress$ = this.userservice.getAllUserAddress();
+    this.userAddress$ = this.userservice.getAllUserType();
   }
 
   trackByIndex(index: number): number {
