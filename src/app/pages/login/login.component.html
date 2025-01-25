@@ -1,0 +1,9 @@
+<h3>Please choice how you want to Login!</h3>
+<div class="login__actions">
+  <button (click)="authAsAdmin()">Login as Admin</button>
+  <button (click)="authAsUser()">Login as User</button>
+  <br />
+  <br />
+  <input type="text" placeholder="Enter Role" [(ngModel)]="userRole" />
+  <button type="button" (click)="loginasRole()">Login</button>
+</div>

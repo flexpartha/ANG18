@@ -1,0 +1,23 @@
+<div>
+  <input
+    type="text"
+    placeholder="Enter company name"
+    [(ngModel)]="companyName"
+  />
+  <button (click)="getAlltheProductStore()">Find By Company</button>
+</div>
+<br />
+<br />
+<div class="example1">
+  <div *ngFor="let product of productList | async; let i = index">
+    <img src="{{ product.image }}" alt="product image" width="75" height="75" />
+    <div appTextcolor>
+      {{ product.name }}
+    </div>
+    <div
+      class="colorSpace"
+      *ngFor="let color of product.colors; let i = index"
+      [style.background-color]="color"
+    ></div>
+  </div>
+</div>

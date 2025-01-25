@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>CITY</th>
+      <th>STREET</th>
+      <th>SUIT</th>
+      <th>ZIP CODE</th>
+      <th>GEO LAT LONG</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (address of userAddress$ | async; track trackByIndex){
+    <tr>
+      <td>{{ address.city }}</td>
+      <td>{{ address.street }}</td>
+      <td>{{ address.suite }}</td>
+      <td>{{ address.zipcode }}</td>
+      <td>{{ address.geo.lat }} {{ address.geo.lng }}</td>
+    </tr>
+    }
+  </tbody>
+</table>

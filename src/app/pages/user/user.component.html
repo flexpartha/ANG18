@@ -1,0 +1,7 @@
+<h1>Welcome {{ auth.username }}!</h1>
+<h2>welcome {{ auth.user()?.name }} {{ auth.user()?.surname }}</h2>
+<nav>
+  <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
+    >Login</a
+  >
+</nav>
