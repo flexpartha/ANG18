@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, filter, map, Observable, throwError } from 'rxjs';
-import { UserAddress, Address } from '../../interfaces/useraddress.interface';
+//import { UserAddress, Address } from '../../interfaces/useraddress.interface';
+import { UserAddress, Address } from '../../interfaces/useraddress.type';
 
 const apiUrl = 'https://jsonplaceholder.typicode.com/users';
 

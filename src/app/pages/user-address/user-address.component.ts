@@ -1,7 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { UserAddressService } from '../service/user-address.service';
 import { Observable } from 'rxjs';
-import { Address } from '../../interfaces/useraddress.interface';
+//import { Address } from '../../interfaces/useraddress.interface';
+import { Address } from '../../interfaces/useraddress.type';
 import { AsyncPipe, CommonModule } from '@angular/common';
 
 @Component({
