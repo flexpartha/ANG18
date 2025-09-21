@@ -13,16 +13,12 @@ export class FactoryserviceService {
   getService(): any {
     const userRole = localStorage.getItem('userRole');
     console.log('Dynamically resolving service for role:', userRole);
-    return userRole === 'admin'
-      ? this.injector.get(AdminService)
-      : this.injector.get(UserService);
+    return userRole === 'admin' ? this.injector.get(AdminService) : this.injector.get(UserService);
   }
 }
 
 export function roleBasedServiceFactory(injector: Injector): any {
   const userRole = localStorage.getItem('userRole'); // Get user role dynamically
   console.log('userRole', userRole);
-  return userRole === 'admin'
-    ? injector.get(AdminService)
-    : injector.get(UserService);
+  return userRole === 'admin' ? injector.get(AdminService) : injector.get(UserService);
 }
