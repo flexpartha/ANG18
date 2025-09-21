@@ -9,10 +9,10 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 
-// import {
-//   ROLE_BASED_SERVICE,
-//   roleBasedServiceFactory,
-// } from './pages/service/factory/factoryservice.service';
+import {
+  ROLE_BASED_SERVICE,
+  roleBasedServiceFactory,
+} from './pages/service/factory/factoryservice.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,10 +20,10 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     provideHttpClient(withFetch()),
-    // {
-    //   provide: ROLE_BASED_SERVICE,
-    //   useFactory: roleBasedServiceFactory,
-    //   deps: [Injector],
-    // },
+    {
+      provide: ROLE_BASED_SERVICE,
+      useFactory: roleBasedServiceFactory,
+      deps: [Injector],
+    },
   ],
 };

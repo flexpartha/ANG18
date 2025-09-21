@@ -30,21 +30,21 @@ export class AdminRoleComponent implements OnInit {
   userAddress$!: Observable<Address[]>;
 
   userservice = inject(UserAddressService);
-  // constructor(
-  //   @Inject(ROLE_BASED_SERVICE) private roleBasedService: any
-  // ) //private cdr: ChangeDetectorRef
-  // {
-  //   this.message = this.roleBasedService.getData();
-  //   //this.cdr.detectChanges();
-  // }
-
-  constructor(private roleBasedService: FactoryserviceService) {
-    const service = this.roleBasedService.getService();
-    this.message = service.getData();
+  constructor(
+    @Inject(ROLE_BASED_SERVICE) private roleBasedService: any //private cdr: ChangeDetectorRef
+  ) {
+    this.message = this.roleBasedService.getData();
+    //this.cdr.detectChanges();
   }
 
+  // constructor(private roleBasedService: FactoryserviceService) {
+  //   const service = this.roleBasedService.getService();
+  //   this.message = service.getData();
+  // }
+
   ngOnInit(): void {
-    this.userAddress$ = this.userservice.getAllUserType();
+    // if use factory function as a dependency injection as a service provider in app.config.ts
+    this.userAddress$ = this.roleBasedService.getAllUserType();
   }
   logout() {
     localStorage.removeItem('userRole');

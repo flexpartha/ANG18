@@ -38,4 +38,13 @@ export class UserAddressService {
       })
     );
   }
+
+  getAllUsers(): Observable<UserAddress[]> {
+    return this._httClient.get<UserAddress[]>(apiUrl);
+  }
+  getUserById(id: number): Observable<UserAddress> {
+    return this._httClient
+      .get<UserAddress>(`${apiUrl}/${id}`)
+      .pipe(catchError((error: string) => throwError(() => new Error(error))));
+  }
 }

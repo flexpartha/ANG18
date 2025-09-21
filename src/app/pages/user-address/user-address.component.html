@@ -9,14 +9,35 @@
     </tr>
   </thead>
   <tbody>
-    @for (address of userAddress$ | async; track trackByIndex){
-    <tr>
+    <tr
+      *ngFor="
+        let address of userAddress$ | async;
+        let index = index;
+        trackBy: trackByIndex
+      "
+    >
       <td>{{ address.city }}</td>
       <td>{{ address.street }}</td>
       <td>{{ address.suite }}</td>
       <td>{{ address.zipcode }}</td>
       <td>{{ address.geo.lat }} {{ address.geo.lng }}</td>
     </tr>
-    }
   </tbody>
 </table>
+<br />
+<br />
+<div>
+  <select [formControl]="userIdControl">
+    <option value="">Select User ID</option>
+    <option *ngFor="let user of allUsers$ | async" [value]="user.id">
+      {{ user.id }}
+    </option>
+  </select>
+</div>
+<br />
+<br />
+<div *ngIf="user$ | async as user">
+  <h3>User Details</h3>
+  <p><b>Name:</b> {{ user.name }}</p>
+  <p><b>Email:</b> {{ user.email }}</p>
+</div>

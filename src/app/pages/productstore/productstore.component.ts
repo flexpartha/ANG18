@@ -19,7 +19,7 @@ export class ProductstoreComponent {
 
   prodservice = inject(ProductstoreService);
 
-  companyName!: string;
+  companyName: string = '';
 
   getAlltheProductStore() {
     this.productList = this.prodservice.getProducts(this.companyName);

@@ -22,7 +22,11 @@ export class ProductstoreService {
           item.checked = false;
         });
         console.log('Response Result::-', response);
-        return response.filter((Company) => Company.company === companyname);
+        response = response.filter(
+          (Company) => Company.company === companyname
+        );
+        console.log('Response Result after filter company::-', response);
+        return response;
       }),
       retry(3),
       catchError((error: HttpErrorResponse) => {
