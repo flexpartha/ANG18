@@ -7,12 +7,11 @@ import { AsyncPipe } from '@angular/common';
 import { ProductsComponent } from '../custom-screen/products/products.component';
 
 @Component({
-  selector: 'app-productdetails',
-  standalone: true,
-  imports: [AsyncPipe, ProductsComponent],
-  templateUrl: './productdetails.component.html',
-  styleUrl: './productdetails.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-productdetails',
+    imports: [AsyncPipe, ProductsComponent],
+    templateUrl: './productdetails.component.html',
+    styleUrl: './productdetails.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductdetailsComponent implements OnInit {
   productsdetails$: Observable<Productstore> | undefined;

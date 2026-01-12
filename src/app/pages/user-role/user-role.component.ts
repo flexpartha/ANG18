@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Inject, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   FactoryserviceService,
@@ -12,9 +12,9 @@ import {
   templateUrl: './user-role.component.html',
   styleUrl: './user-role.component.scss',
 })
-export class UserRoleComponent {
+export class UserRoleComponent implements OnInit {
   #router = inject(Router);
-  message: string;
+  message!: string;
 
   // constructor(
   //   @Inject(ROLE_BASED_SERVICE) private roleBasedService: any
@@ -23,11 +23,17 @@ export class UserRoleComponent {
   //   this.message = this.roleBasedService.getData();
   //   //this.cdr.detectChanges();
   // }
-  constructor(private roleBasedService: FactoryserviceService) {
+  roleBasedService = inject(FactoryserviceService);
+
+  // constructor(private roleBasedService: FactoryserviceService) {
+  //   const service = this.roleBasedService.getService();
+  //   this.message = service.getData();
+  // }
+
+  ngOnInit(): void {
     const service = this.roleBasedService.getService();
     this.message = service.getData();
   }
-
   logout() {
     localStorage.removeItem('userRole');
     // this.#router.navigateByUrl('/', { skipLocationChange: true }).then(() => {

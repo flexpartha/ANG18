@@ -26,7 +26,7 @@ export class UserAddressComponent implements OnInit {
     this.userAddress$ = this.userservice.getAllUserType();
     this.allUsers$ = this.userservice.getAllUsers();
     this.user$ = this.userIdControl.valueChanges.pipe(
-      switchMap((id) => this.userservice.getUserById(id as number))
+      switchMap((id) => this.userservice.getUserById(id as number)),
     );
   }
 

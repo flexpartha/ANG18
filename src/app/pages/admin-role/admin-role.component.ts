@@ -1,10 +1,4 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  Inject,
-  inject,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   FactoryserviceService,
@@ -31,7 +25,7 @@ export class AdminRoleComponent implements OnInit {
 
   userservice = inject(UserAddressService);
   constructor(
-    @Inject(ROLE_BASED_SERVICE) private roleBasedService: any //private cdr: ChangeDetectorRef
+    @Inject(ROLE_BASED_SERVICE) private roleBasedService: any, //private cdr: ChangeDetectorRef
   ) {
     this.message = this.roleBasedService.getData();
     //this.cdr.detectChanges();
