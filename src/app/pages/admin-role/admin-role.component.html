@@ -13,13 +13,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let address of userAddress$ | async">
-      <td>{{ address.city }}</td>
-      <td>{{ address.street }}</td>
-      <td>{{ address.suite }}</td>
-      <td>{{ address.zipcode }}</td>
-      <td>{{ address.geo.lat }} {{ address.geo.lng }}</td>
-    </tr>
+    @for (address of userAddress$ | async; track address) {
+      <tr>
+        <td>{{ address.city }}</td>
+        <td>{{ address.street }}</td>
+        <td>{{ address.suite }}</td>
+        <td>{{ address.zipcode }}</td>
+        <td>{{ address.geo.lat }} {{ address.geo.lng }}</td>
+      </tr>
+    }
     <!-- @for (address of userAddress$ | async; track trackByIndex){
     <tr>
       <td>{{ address.city }}</td>

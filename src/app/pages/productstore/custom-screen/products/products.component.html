@@ -1,0 +1,16 @@
+<div>
+  <img src="{{ productImage }}" alt="product image" [ngClass]="picClass" />
+  <div appTextcolor>
+    {{ productName }}
+  </div>
+  <br />
+  <div>Price: {{ productPrice }}</div>
+  <br />
+  @if (showDescription) {
+    <div>Description: {{ productDescription }}</div>
+  }
+  <br />
+  @if (showCompany) {
+    <div>Company: {{ productCompany }}</div>
+  }
+</div>

@@ -5,10 +5,15 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "build:staging": "ng build --configuration staging",
+    "build:uat": "ng build --configuration uat",
+    "serve:prod": "ng serve --configuration production",
+    "serve:staging": "ng serve --configuration staging",
+    "serve:uat": "ng serve --configuration uat",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --code-coverage",
-    "serve:ssr:ag18": "node dist/ag18/server/server.mjs",
-    "prepare": "husky install"
+    "serve:ssr:ag18": "node dist/ag18/server/server.mjs"
   },
   "lint-staged": {
     "*.{ts,js,scss,html}": [
@@ -48,7 +53,6 @@
     "@typescript-eslint/parser": "^8.44.0",
     "@typescript-eslint/utils": "^8.44.0",
     "eslint": "^9.36.0",
-    "husky": "^9.1.7",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

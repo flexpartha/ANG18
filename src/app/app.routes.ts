@@ -8,6 +8,7 @@ import { ProductstoreComponent } from './pages/productstore/productstore.compone
 import { UserAddressComponent } from './pages/user-address/user-address.component';
 import { AdminRoleComponent } from './pages/admin-role/admin-role.component';
 import { UserRoleComponent } from './pages/user-role/user-role.component';
+import { ProductdetailsComponent } from './pages/productstore/productdetails/productdetails.component';
 
 const Routes = {
   User: 'user',
@@ -63,5 +64,9 @@ export const routes: Routes = [
   {
     path: 'userrole',
     component: UserRoleComponent,
+  },
+  {
+    path: 'productdetails/:id',
+    component: ProductdetailsComponent,
   },
 ];

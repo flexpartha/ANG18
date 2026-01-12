@@ -1,0 +1,6 @@
+{
+  "apiUrl": "https://api.dev.myapp.com",
+  "authUrl": "https://auth.dev.myapp.com",
+  "featureFlag": true,
+  "logLevel": "debug"
+}

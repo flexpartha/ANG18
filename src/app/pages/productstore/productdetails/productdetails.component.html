@@ -1,0 +1,18 @@
+<div>
+  <h2>Product Details</h2>
+  @if (productsdetails$ | async; as product) {
+    <div>
+      <app-products
+        picClass="pic-big-screen"
+        [productName]="product.name"
+        [productPrice]="product.price"
+        [productImage]="product.image"
+        [productDescription]="product.description"
+        [productCompany]="product.company"
+        [showDescription]="true"
+        [showCompany]="true"
+        >
+      </app-products>
+    </div>
+  }
+</div>

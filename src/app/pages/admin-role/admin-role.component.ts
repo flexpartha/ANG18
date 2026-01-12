@@ -13,12 +13,12 @@ import {
 import { Observable } from 'rxjs';
 import { Address } from '../../interfaces/useraddress.type';
 import { UserAddressService } from '../service/user-address.service';
-import { AsyncPipe, NgFor } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-admin-role',
   standalone: true,
-  imports: [AsyncPipe, NgFor],
+  imports: [AsyncPipe],
   templateUrl: './admin-role.component.html',
   styleUrl: './admin-role.component.scss',
 })

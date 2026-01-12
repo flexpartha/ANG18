@@ -122,3 +122,35 @@
     <router-outlet></router-outlet>
   </div>
 </main>
+<br />
+<div #parentDiv>
+  <p #childPara>This is a paragraph that will be removed</p>
+</div>
+<br />
+<!-- <button (click)="removeChild()">Remove Paragraph</button> -->
+<app-click-btn
+  buttonLabel="Remove Paragraph"
+  buttonClass="button-remove"
+  (searchEvt)="removeChild()"
+></app-click-btn>
+
+<div #container></div>
+<br />
+<!-- <button (click)="addElement()">Add Element</button> -->
+<app-click-btn
+  buttonLabel="Add Element"
+  buttonClass="button-add"
+  (searchEvt)="addElement()"
+></app-click-btn>
+
+<!-- <button (click)="removeElement()">Remove Element</button> -->
+<app-click-btn
+  buttonLabel="Remove Element"
+  buttonClass="button-remove-element"
+  (searchEvt)="removeElement()"
+></app-click-btn>
+<br />
+<br />
+<div #inputDv style="border: 1px solid red; width: 200px; padding: 1%">
+  <input #inputTxt type="text" placeholder="Enter your name" />
+</div>

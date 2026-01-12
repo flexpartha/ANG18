@@ -1,26 +1,36 @@
 <div>
-  <input
-    class="textbox"
-    type="text"
-    placeholder="Enter company name"
-    [(ngModel)]="companyName"
-  />
-  <button class="button" (click)="getAlltheProductStore()">
-    Find By Company Name
-  </button>
+  <input class="textbox" type="text" placeholder="Enter company name" [(ngModel)]="companyName" />
+  <!-- <button class="button" (click)="getAlltheProductStore()">
+  Find By Company Name
+</button> -->
+<app-click-btn
+  buttonLabel="Find By Company Name"
+  (searchEvt)="getAlltheProductStore()"
+></app-click-btn>
 </div>
 <br />
 <br />
 <div class="example1">
-  <div *ngFor="let product of productList | async; let i = index">
-    <img src="{{ product.image }}" alt="product image" width="75" height="75" />
-    <div appTextcolor>
+  @for (product of productList | async; track product; let i = $index) {
+    <div>
+      <app-products
+        (click)="onProductClick(product)"
+        [productName]="product.name"
+        [productPrice]="product.price"
+        [productImage]="product.image"
+        [showDescription]="false"
+        [showCompany]="false"
+      ></app-products>
+      <!-- <img src="{{ product.image }}" alt="product image" width="75" height="75" /> -->
+      <!-- <div appTextcolor>
       {{ product.name }}
-    </div>
-    <div
-      class="colorSpace"
-      *ngFor="let color of product.colors; let i = index"
-      [style.background-color]="color"
-    ></div>
+    </div> -->
+    @for (color of product.colors; track color; let i = $index) {
+      <div
+        class="colorSpace"
+        [style.background-color]="color"
+      ></div>
+    }
   </div>
+}
 </div>
